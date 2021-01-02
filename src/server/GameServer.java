@@ -135,7 +135,7 @@ public class GameServer {
                             if (p1.equals(receivedData[1])) {
                                 ps.println("profile." + rs.getString("p2") + "." + rs.getString("id")
                                         + "." + rs.getString("Date") + "." + rs.getInt("winner") + "." + rs.getInt("p1_recorded"));
-                            } else if (p2.equals(receivedData[3])) {
+                            } else if (p2.equals(receivedData[1])) {
                                 ps.println("profile." + rs.getString("p1") + "." + rs.getString("id")
                                         + "." + rs.getString("Date") + "." + rs.getInt("winner") + "." + rs.getInt("p2_recorded"));
                             }
@@ -226,7 +226,7 @@ public class GameServer {
                         String winnerMark = receivedData[2];
                         String winnerUsername = "";
                         for (Game game : gamesVector) {
-                            if (game.id.equals(gameId)) {
+                            if (game.getId().equals(gameId)) {
                                 if (winnerMark.equals("X")) {
                                     winnerUsername = game.getPlayer1();
                                 } else if (winnerMark.equals("O")) {
